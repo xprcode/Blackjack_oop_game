@@ -1,13 +1,15 @@
 from deck import Deck
 from card import Card
 
-# Check if deck creates listo f 52 cards. 
+ 
 def test_deck_creation():
+    """ Check if deck creates listo f 52 cards."""
     deck = Deck()
     assert len(deck.card_list) == 52
 
-# Check if each colour conaint 13 cards.
+
 def test_deck():
+    """ Check if each colour conaint 13 cards."""
     deck = Deck()
     cards = [(card.value, card.colour) for card in deck.card_list]
 
@@ -16,16 +18,18 @@ def test_deck():
 
     assert len(possible_color) == 13
 
-# Check if dedk has been shuffled.
+
 def test_shuffle():
+    """ Check if dedk has been shuffled."""
     deck = Deck()
     new_deck = Deck()
     new_deck.shuffle()
     if deck.card_list != new_deck:
         assert True
 
-# Check if exactly one card has been taken and removed from the list.
+
 def test_card_taking():
+    """ Check if exactly one card has been taken and removed from the list."""
     deck = Deck()
     new_deck = Deck()
     new_deck.card_taking()
